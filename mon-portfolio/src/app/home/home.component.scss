@@ -1,0 +1,33 @@
+/* Sidebar fixe sur desktop */
+.sidebar {
+  position: fixed;      /* fixe la sidebar */
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 25%;           /* 3/12 = 25% */
+  min-width: 250px;     /* optionnel pour garder lisibilité */
+  overflow-y: auto;
+  z-index: 1000;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+ // background: var(--sidebar-bg, #0b1a1f); /* adapte */
+}
+
+/* Main : laisser de l'espace à gauche égal à la largeur de la sidebar */
+.main {
+  margin-left: 25%;
+  padding: 2rem 1.5rem;
+  box-sizing: border-box;
+}
+
+/* Responsive : mettre sidebar non-fixe sur petits écrans */
+@media (max-width: 767.98px) {
+  .sidebar {
+    position: static;
+    width: 100%;
+    min-width: 0;
+  }
+  .main {
+    margin-left: 0;
+  }
+}
