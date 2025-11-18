@@ -1,16 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'Montserrat-Medium';
+  src: url('../../assets/font-family/Montserrat-Medium.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Montserrat-Medium';
+}
+
+#font {
+  font-family: 'Montserrat-Medium';
+
+}
+
 /* Sidebar fixe sur desktop */
 .sidebar {
-  position: fixed;      /* fixe la sidebar */
+  position: fixed;
+  /* fixe la sidebar */
   top: 0;
   left: 0;
   bottom: 0;
-  width: 25%;           /* 3/12 = 25% */
-  min-width: 250px;     /* optionnel pour garder lisibilité */
+  width: 25%;
+  /* 3/12 = 25% */
+  min-width: 250px;
+  /* optionnel pour garder lisibilité */
   overflow-y: auto;
   z-index: 1000;
   padding: 2rem 1rem;
   box-sizing: border-box;
- // background: var(--sidebar-bg, #0b1a1f); /* adapte */
+  // background: var(--sidebar-bg, #0b1a1f); /* adapte */
 }
 
 /* Main : laisser de l'espace à gauche égal à la largeur de la sidebar */
@@ -27,7 +47,41 @@
     width: 100%;
     min-width: 0;
   }
+
   .main {
     margin-left: 0;
   }
+}
+
+
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  /* Distance depuis le bas de l'écran */
+  right: 20px;
+  /* Distance depuis la droite de l'écran */
+  width: 50px;
+  height: 50px;
+  background-color: #053f72;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  /* Pour rendre la div circulaire */
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  /* Assurez-vous qu'il se superpose correctement */
+}
+
+.scroll-to-top i {
+  color: #fff;
+  font-size: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.scroll-to-top:hover i {
+  transform: translateY(-5px);
+  /* Légère animation sur hover */
 }
