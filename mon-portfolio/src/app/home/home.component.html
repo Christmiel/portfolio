@@ -6,8 +6,10 @@
             <header class="col-12 col-md-3 sidebar">
 
 
-                <header id="header" class="header dark-background d-flex flex-column justify-content-center">
-                    <i class="header-toggle d-xl-none bi bi-list"></i>
+<header id="header" 
+        class="header dark-background d-flex flex-column justify-content-center"
+        [class.header-show]="isMenuOpen">
+<i class="header-toggle d-xl-none bi bi-list" (click)="toggleMenu()"></i>
 
                     <div class="header-container d-flex flex-column align-items-start">
                         <nav id="navmenu" class="navmenu">
@@ -23,10 +25,13 @@
                         </nav>
 
                         <div class="social-links text-center">
-                            <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
                             <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                            <a href="https://www.instagram.com/lokossou.irene/" target="_blank" class="instagram"><i
+                                    class="bi bi-instagram"></i></a>
+                            <a href="https://www.linkedin.com/in/ir%C3%A9n%C3%A9-lokossou-469b38268/" target="_blank"
+                                rel="noopener noreferrer" class="linkedin">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
                         </div>
 
                     </div>
@@ -36,7 +41,7 @@
             </header>
 
             <!-- Main -->
-            <main class="col-12 col-md-9 main">
+            <main class="col-12 col-md-9  main">
                 <!-- hero, about, ... -->
                 <section id="hero" class="hero section">
 
@@ -66,12 +71,18 @@
                                             <a href="#contact" class="btn btn-outline">Me contacter</a>
                                         </div>
 
-                                        <div class="social-links">
+                                        <div
+                                            class="social-links d-flex justify-content-center justify-content-md-start">
                                             <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
                                             <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                                            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                                            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                                            <a href="https://www.instagram.com/lokossou.irene/" target="_blank"
+                                                class="instagram"><i class="bi bi-instagram"></i></a>
+                                            <a href="https://www.linkedin.com/in/ir%C3%A9n%C3%A9-lokossou-469b38268/"
+                                                target="_blank" rel="noopener noreferrer" class="linkedin">
+                                                <i class="bi bi-linkedin"></i>
+                                            </a>
                                         </div>
+
                                     </div>
                                 </div>
 
@@ -79,8 +90,8 @@
                                     <div class="hero-visual">
                                         <div class="profile-container">
                                             <div class="profile-background"></div>
-                                            <img src="../../assets/img/profile/photo_iréné_lokossou.jpg" alt="Iréné Lokossou"
-                                                class="profile-image">
+                                            <img src="../../assets/img/profile/photo_iréné_lokossou.jpg"
+                                                alt="Iréné Lokossou" class="profile-image">
                                         </div>
                                     </div>
                                 </div>
@@ -166,10 +177,13 @@
 
 
                                     <div class="cta-section">
-                                        <a href="#" class="btn btn-primary">
-                                            <i class="bi bi-download"></i>
-                                            Télécharger CV
+                                        <a (click)="downloadCV()" class="btn btn-primary" [class.disabled]="isLoading">
+                                            <i *ngIf="!isLoading" class="bi bi-download"></i>
+                                            <span *ngIf="isLoading" class="spinner-border spinner-border-sm"
+                                                role="status" aria-hidden="true"></span>
+                                            {{ isLoading ? 'Téléchargement...' : 'Télécharger CV' }}
                                         </a>
+
                                         <a href="#contact" class="btn btn-outline">
                                             <i class="bi bi-chat-dots"></i>
                                             Discutons
@@ -196,7 +210,7 @@
 
                         <div class="row">
                             <!-- Front-end Development -->
-                            <div class="col-lg-4">
+                            <div class="col-lg-4 mb-2 mt-2">
                                 <div class="skills-category" data-aos="fade-up" data-aos-delay="200">
                                     <h3><i class="bi bi-code-slash"></i> Front-end</h3>
                                     <div class="skills-animation">
@@ -268,10 +282,10 @@
 
                                     </div>
                                 </div>
-                            </div><!-- End Frontend Skills -->
+                            </div> <!-- End Frontend Skills -->
 
                             <!-- Back-end & Mobile -->
-                            <div class="col-lg-4">
+                            <div class="col-lg-4 mb-2 mt-2">
                                 <div style="background-color: #1e3d59; border:1px solid #fff" class="skills-category"
                                     data-aos="fade-up" data-aos-delay="300">
                                     <h3><i class="bi bi-server"></i> Back-end & Mobile</h3>
@@ -346,7 +360,7 @@
                             </div><!-- End Backend Skills -->
 
                             <!-- Databases & Tools -->
-                            <div class="col-lg-4">
+                            <div class="col-lg-4 mb-2 mt-2">
                                 <div class="skills-category" data-aos="fade-up" data-aos-delay="400">
                                     <h3><i class="bi bi-tools"></i> Bases de données & Outils</h3>
                                     <div class="skills-animation">
@@ -400,55 +414,15 @@
                             <div class="col-12">
                                 <div class="skills-category" data-aos="fade-up" data-aos-delay="500">
                                     <h3><i class="bi bi-star-fill"></i> Compétences Complémentaires</h3>
-                                    <div class="row">
-                                        <div class="col-md-3 col-6">
-                                            <div class="skill-badge">
-                                                <i class="bi bi-shield-check"></i>
-                                                <span>SEO/Performance</span>
+                                    <div class="row g-3"> <!-- g-3 pour espacement responsive entre colonnes -->
+
+                                        <div class="col-6 col-sm-4 col-md-3 col-lg-3" *ngFor="let skill of skills">
+                                            <div class="skill-badge text-center p-3">
+                                                <i [class]="skill.icon" style="font-size: 1.5rem;"></i>
+                                                <span>{{ skill.label }}</span>
                                             </div>
                                         </div>
-                                        <div class="col-md-3 col-6">
-                                            <div class="skill-badge">
-                                                <i class="bi bi-phone"></i>
-                                                <span>Responsive Design</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 col-6">
-                                            <div class="skill-badge">
-                                                <i class="bi bi-lightning-charge"></i>
-                                                <span>PWA</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 col-6">
-                                            <div class="skill-badge">
-                                                <i class="bi bi-cloud-upload"></i>
-                                                <span>Deployment</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 col-6">
-                                            <div class="skill-badge">
-                                                <i class="bi bi-bug"></i>
-                                                <span>Debugging</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 col-6">
-                                            <div class="skill-badge">
-                                                <i class="bi bi-diagram-3"></i>
-                                                <span>Architecture</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 col-6">
-                                            <div class="skill-badge">
-                                                <i class="bi bi-graph-up"></i>
-                                                <span>Analytics</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 col-6">
-                                            <div class="skill-badge">
-                                                <i class="bi bi-share"></i>
-                                                <span>Agile/Scrum</span>
-                                            </div>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -618,7 +592,9 @@
                         <h2>Portfolio</h2>
                         <p>Découvrez mes réalisations web et mobile où j'ai mis en œuvre mes compétences en
                             développement front-end, back-end et en expérience utilisateur.</p>
-                    </div><!-- End Section Title -->
+                    </div>
+
+                    <!-- End Section Title -->
 
                     <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -629,10 +605,24 @@
                                 <div class="col-lg-3 filter-sidebar">
                                     <div class="filters-wrapper" data-aos="fade-right" data-aos-delay="150">
                                         <ul class="portfolio-filters isotope-filters">
-                                            <li data-filter="*" class="filter-active">Tous les projets</li>
-                                            <li data-filter=".filter-web">Applicaion Web</li>
-                                            <li data-filter=".filter-mobile">Applications Mobile</li>
-                                            <li data-filter=".filter-official">Sites Officiels</li>
+                                            <li (click)="setFilter('*')" [class.filter-active]="selectedFilter === '*'">
+                                                Tous les projets
+                                            </li>
+
+                                            <li (click)="setFilter('web')"
+                                                [class.filter-active]="selectedFilter === 'web'">
+                                                Application Web
+                                            </li>
+
+                                            <li (click)="setFilter('mobile')"
+                                                [class.filter-active]="selectedFilter === 'mobile'">
+                                                Applications Mobile
+                                            </li>
+
+                                            <li (click)="setFilter('official')"
+                                                [class.filter-active]="selectedFilter === 'official'">
+                                                Sites Officiels
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -641,90 +631,25 @@
                                     <div class="row gy-4 portfolio-container isotope-container" data-aos="fade-up"
                                         data-aos-delay="200">
 
-                                        <!-- TOFFO TOWN HALL -->
-                                        <div
-                                            class="col-lg-6 col-md-6 portfolio-item isotope-item filter-web filter-official">
+                                        <div class="col-lg-6 col-md-6 portfolio-item" *ngFor="let p of projects"
+                                            [hidden]="selectedFilter !== '*' && !p.category.includes(selectedFilter)">
                                             <div class="portfolio-wrap">
-                                                <img src="../../assets/img/portfolio/mairie.png" class="img-fluid"
-                                                    alt="Mairie de Toffo - Site Officiel" loading="lazy">
+                                                <img [src]="p.img" class="img-fluid" [alt]="p.title">
+
                                                 <div class="portfolio-info">
                                                     <div class="content">
-                                                        <span class="category">Site Officiel</span>
-                                                        <h4 class="text-white">Mairie de Toffo</h4>
-                                                        <div class="portfolio-links">
+                                                        <h4 class="text-white">{{ p.title }}</h4>
 
-                                                            <a href="https://mairietoffo.bj" target="_blank"
-                                                                title="Voir le site">
+                                                        <div class="portfolio-links">
+                                                            <a [href]="p.link" target="_blank">
                                                                 <i class="bi bi-arrow-right"></i>
                                                             </a>
                                                         </div>
                                                     </div>
                                                 </div>
+
                                             </div>
-                                        </div><!-- End Portfolio Item -->
-
-                                        <!-- UDA ORGANIZATION -->
-                                        <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-web">
-                                            <div class="portfolio-wrap">
-                                                <img src="../../assets/img/portfolio/uda.png" class="img-fluid"
-                                                    alt="UDA Organization - Application Web" loading="lazy">
-                                                <div class="portfolio-info">
-                                                    <div class="content">
-                                                        <span class="category">Application Web</span>
-                                                        <h4 class="text-white">UDA Organization</h4>
-                                                        <div class="portfolio-links">
-
-                                                            <a href="https://app.udaorganisation.org" target="_blank"
-                                                                title="Voir l'application">
-                                                                <i class="bi bi-arrow-right"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- End Portfolio Item -->
-
-                                        <!-- KONDOCV -->
-                                        <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-web">
-                                            <div class="portfolio-wrap">
-                                                <img src="../../assets/img/portfolio/kondocv.png" class="img-fluid"
-                                                    alt="Kondocv - Application Web" loading="lazy">
-                                                <div class="portfolio-info">
-                                                    <div class="content">
-                                                        <span class="category">Application Web</span>
-                                                        <h4 class="text-white">Kondocv</h4>
-                                                        <div class="portfolio-links">
-
-                                                            <a href="https://kondocv.com" target="_blank"
-                                                                title="Voir l'application">
-                                                                <i class="bi bi-arrow-right"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- End Portfolio Item -->
-
-                                        <!-- QUEUE MANAGEMENT SYSTEM -->
-                                        <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-mobile">
-                                            <div class="portfolio-wrap">
-                                                <img src="../../assets/img/portfolio/sidoffe.png" class="img-fluid"
-                                                    alt="Système de Gestion de Files d'Attente" loading="lazy">
-                                                <div class="portfolio-info">
-                                                    <div class="content">
-                                                        <span class="category">Application web</span>
-                                                        <h4 class="text-white"> SIDoFFE-NG</h4>
-                                                        <div class="portfolio-links">
-
-                                                            <a href="https://sidoffe-ng.social.gouv.bj/sidoffepublic/public"
-                                                                target="_blank" title="Plus de détails">
-                                                                <i class="bi bi-arrow-right"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- End Portfolio Item -->
+                                        </div>
                                     </div><!-- End Portfolio Container -->
                                 </div>
                             </div>
@@ -763,7 +688,7 @@
                                             pour créer des solutions digitales qui répondent à vos objectifs.
                                         </p>
                                         <a href="#contact" class="service-btn">
-                                            Discutons de  votre projet
+                                            Discutons de votre projet
                                             <i class="bi bi-arrow-right"></i>
                                         </a>
                                     </div>
@@ -1015,40 +940,63 @@
                                 <div class="contact-form">
                                     <h3>Envoyez un message</h3>
                                     <p>Décrivez votre projet et je vous recontacterai rapidement pour en discuter.</p>
-
-                                    <form action="forms/contact.php" method="post" class="php-email-form">
+                                    <form class="php-email-form" #contactForm="ngForm"
+                                        (ngSubmit)="sendMessage(contactForm)">
                                         <div class="row gy-4">
 
                                             <div class="col-md-6">
-                                                <input type="text" name="name" class="form-control"
-                                                    placeholder="Votre nom" required="">
+                                                <input [(ngModel)]="item.nom" type="text" name="nom"
+                                                    class="form-control" placeholder="Votre nom" required
+                                                    #nom="ngModel">
+                                                <div *ngIf="nom.invalid && nom.touched" class="error-message">Veuillez
+                                                    entrer votre nom.</div>
                                             </div>
 
                                             <div class="col-md-6">
-                                                <input type="email" class="form-control" name="email"
-                                                    placeholder="Votre email" required="">
+                                                <input [(ngModel)]="item.email" type="email" class="form-control"
+                                                    name="email" placeholder="Votre email" required #email="ngModel">
+                                                <div *ngIf="email.invalid && email.touched" class="error-message">
+                                                    Veuillez entrer un email valide.</div>
                                             </div>
 
                                             <div class="col-12">
-                                                <input type="text" class="form-control" name="subject"
-                                                    placeholder="Sujet" required="">
+                                                <input [(ngModel)]="item.subject" type="text" class="form-control"
+                                                    name="subject" placeholder="Sujet" required #subject="ngModel">
+                                                <div *ngIf="subject.invalid && subject.touched" class="error-message">
+                                                    Veuillez entrer le sujet.</div>
                                             </div>
 
                                             <div class="col-12">
-                                                <textarea class="form-control" name="message" rows="6"
-                                                    placeholder="Votre message" required=""></textarea>
+                                                <textarea [(ngModel)]="item.message" class="form-control" name="message"
+                                                    rows="6" placeholder="Votre message" required
+                                                    #message="ngModel"></textarea>
+                                                <div *ngIf="message.invalid && message.touched" class="error-message">
+                                                    Veuillez entrer votre message.</div>
                                             </div>
 
                                             <div class="col-12 text-center">
-                                                <div class="loading">Chargement</div>
-                                                <div class="error-message"></div>
-                                                <div class="sent-message">Votre message a été envoyé. Merci !</div>
+                                                <div *ngIf="isLoading" class="loading">Chargement...</div>
+                                                <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+                                                <div *ngIf="successMessage" class="sent-message">{{ successMessage }}
+                                                </div>
 
-                                                <button type="submit" class="btn">Envoyer le message</button>
+                                                <button type="submit" class="btn"
+                                                    [disabled]="isLoading || contactForm.invalid">
+
+                                                    <span *ngIf="!isLoading">Envoyer le message</span>
+
+                                                    <span *ngIf="isLoading" class="spinner-border spinner-border-sm"
+                                                        role="status" aria-hidden="true"></span>
+                                                    <span *ngIf="isLoading"> Envoi...</span>
+
+                                                </button>
+
                                             </div>
 
                                         </div>
                                     </form>
+
+
 
                                 </div>
                             </div>
@@ -1079,5 +1027,5 @@
 
 </footer>
 <div class="scroll-to-top" (click)="scrollToTop()">
-  <i class="pi pi-arrow-up"></i>
+    <i class="pi pi-arrow-up"></i>
 </div>

@@ -85,3 +85,15 @@ body {
   transform: translateY(-5px);
   /* Légère animation sur hover */
 }
+
+.error-message {
+  color: #dc3545; /* rouge */
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.sent-message {
+  color: #28a745; /* vert */
+  font-weight: bold;
+  margin-top: 5px;
+}
