@@ -10,10 +10,12 @@ export class HomeComponent {
 
 
 
-    scrollToTop() {
+  scrollToTop() {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     });
   }
+
+  
 }
