@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { saveAs } from 'file-saver';
+import Typed from 'typed.js';
+
 interface Contact {
   nom: string;
   email: string;
@@ -55,7 +57,7 @@ export class HomeComponent {
     {
       title: 'Mairie de Toffo',
       category: ['web', 'official'],
-      img: 'assets/img/portfolio/mairie.png',
+      img: '../../assets/img/portfolio/mairie.png',
       link: 'https://mairietoffo.bj',
     },
     {
@@ -79,6 +81,16 @@ export class HomeComponent {
   ];
   constructor(private http: HttpClient) { }
 
+
+    ngAfterViewInit(): void {
+    const typed = new Typed('.typed', {
+      strings: ['Designer', 'Developer', 'Freelancer', 'Artist'], // ← texte
+      typeSpeed: 80,
+      backSpeed: 40,
+      backDelay: 1500,
+      loop: true
+    });
+  }
   scrollToTop() {
     window.scrollTo({
       top: 0,

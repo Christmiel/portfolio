@@ -1,1028 +1,784 @@
-<section id="font" class="index-page">
-    <div class="container-fluid">
-        <div class="row">
+<header id="header" class="header d-flex align-items-center fixed-top" [class.header-show]="isMenuOpen">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
 
-            <!-- Sidebar -->
-            <header class="col-12 col-md-3 sidebar">
+        <a href="index.html" class="logo d-flex align-items-center">
+            <!-- Logo -->
+        </a>
 
+        <!-- Bouton mobile (ouverture) -->
+        <i class="mobile-nav-toggle bi" [ngClass]="isMenuOpen ? 'bi-x' : 'bi-list'" (click)="toggleMenu()">
+        </i>
 
-                <header id="header" class="header dark-background d-flex flex-column justify-content-center"
-                    [class.header-show]="isMenuOpen">
-                    <i class="header-toggle d-xl-none bi bi-list" (click)="toggleMenu()"></i>
+        <nav id="navmenu" class="navmenu" [class.navmenu-active]="isMenuOpen">
 
-                    <div class="header-container d-flex flex-column align-items-start">
-                        <nav id="navmenu" class="navmenu">
-                            <ul>
-                                <li><a sty href="#hero" class="active"><i class="bi bi-house navicon"></i>Accueil</a>
-                                </li>
-                                <li><a href="#about"><i class="bi bi-person navicon"></i> À propos</a></li>
-                                <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> CV</a></li>
-                                <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
-                                <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
-                                <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
-                            </ul>
-                        </nav>
+            <!-- Bouton fermer dans le menu -->
+            <i class="close-nav bi bi-x text-white" (click)="toggleMenu()"></i>
 
-                        <div class="social-links text-center">
-                            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                            <a href="https://www.instagram.com/lokossou.irene/" target="_blank" class="instagram"><i
-                                    class="bi bi-instagram"></i></a>
-                            <a href="https://www.linkedin.com/in/ir%C3%A9n%C3%A9-lokossou-469b38268/" target="_blank"
-                                rel="noopener noreferrer" class="linkedin">
-                                <i class="bi bi-linkedin"></i>
-                            </a>
-                        </div>
+            <div class="profile-img">
+                <img src="assets/img/profile/chris.jfif" class="img-fluid rounded-circle" alt="">
+            </div>
 
-                    </div>
+            <a href="index.html" class="logo d-flex align-items-center justify-content-center active">
+                <h1 class="sitename">Christmiel Djohi</h1>
+            </a>
 
-                </header>
-                <!-- contenu du menu -->
-            </header>
+            <div class="social-links text-center">
+                <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            </div>
 
-            <!-- Main -->
-            <main class="col-12 col-md-9 main">
-                <!-- hero, about, ... -->
-                <section id="hero" class="hero section">
+            <ul>
+                <li><a href="#hero" (click)="toggleMenu()">Accueil</a></li>
+                <li><a href="#about" (click)="toggleMenu()">À propos</a></li>
+                <li><a href="#resume" (click)="toggleMenu()">CV</a></li>
+                <li><a href="#portfolio" (click)="toggleMenu()">Portfolio</a></li>
+                <li><a href="#services" (click)="toggleMenu()">Services</a></li>
 
-                    <div class="background-elements">
-                        <div class="bg-circle circle-1"></div>
-                        <div class="bg-circle circle-2"></div>
-                    </div>
+                <li><a href="#contact" (click)="toggleMenu()">Contact</a></li>
+            </ul>
 
-                    <div class="hero-content">
+        </nav>
 
-                        <div class="container">
-                            <div class="row align-items-center">
-
-                                <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-                                    <div class="hero-text">
-                                        <h1>Christmiel <span class="accent-text"> Djohi </span></h1>
-                                        <h2>Développeuse Web Backend | PHP Laravel & C# .NET | Web Services Sécurisés |
-                                            Analyste Cybersécurité en Formation</h2>
-                                        <p class="lead">Je suis <span class="typed"
-                                                data-typed-items="Développeur Web, Développeur Mobile, Designer UI/UX, Consultant Digital"></span>
-                                        </p>
-                                        <p class="description">
-                                            Développeuse Web Backend spécialisée en PHP Laravel et C# .NET, je conçois
-                                            des solutions
-                                            performantes, fiables et sécurisées. J’intègre les meilleures pratiques de
-                                            développement
-                                            et de sécurité pour créer des applications robustes, évolutives et adaptées
-                                            aux besoins
-                                            de votre entreprise.
-                                        </p>
+    </div>
+</header>
 
 
-                                        <div class="hero-actions">
-                                            <a href="#portfolio" class="btn btn-primary">Voir mes projets</a>
-                                            <a href="#contact" class="btn btn-outline">Me contacter</a>
-                                        </div>
+<section class="">
 
-                                        <div class="social-links">
-                                            <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-                                            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                                            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                                            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
+    <!-- Hero Section -->
+    <section id="hero" class="hero section ">
 
-                                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
-                                    <div class="hero-visual">
-                                        <div class="profile-container">
-                                            <div class="profile-background"></div>
-                                            <img src="../../assets/img/profile/chris.jfif" alt="Christmiel Djohi"
-                                                class="profile-image">
-                                        </div>
-                                    </div>
-                                </div>
+        <div class="container">
+            <div class="row g-0 align-items-center">
 
+                <div class="col-lg-6 hero-content" data-aos="fade-right" data-aos-delay="100">
+                    <div class="content-wrapper">
+                        <h1 class="hero-title">
+                            Développeuse Backend <span class="typed"></span>
+                        </h1>
+
+                        <p style="font-family: 'Montserrat-Medium';" class="lead">
+                            Développeuse Backend spécialisée en PHP Laravel et C# .NET, j’architecture et mets
+                            en place des solutions performantes, sécurisées et scalables.
+                            Je maîtrise la conception d’API, l’intégration de bases de données,
+                            l’optimisation des performances et la sécurité applicative pour garantir
+                            un backend robuste et parfaitement adapté aux besoins métiers.
+                        </p>
+
+                        <div class="hero-stats" data-aos="fade-up" data-aos-delay="200">
+                            <div class="stat-item">
+                                <span class="purecounter" data-purecounter-start="0" data-purecounter-end="60"
+                                    data-purecounter-duration="2">0</span>
+                                <span class="stat-label">APIs Développées</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="purecounter" data-purecounter-start="0" data-purecounter-end="5"
+                                    data-purecounter-duration="2">0</span>
+                                <span class="stat-label">Années d’Expérience</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="purecounter" data-purecounter-start="0" data-purecounter-end="40"
+                                    data-purecounter-duration="2">0</span>
+                                <span class="stat-label">Projets Livrés</span>
                             </div>
                         </div>
+
+                        <div class="hero-actions" data-aos="fade-up" data-aos-delay="300">
+                            <a href="#portfolio" class="btn btn-primary">Voir Mes Projets</a>
+                            <a href="#contact" class="btn btn-outline">Me Contacter</a>
+                        </div>
+
+                        <div class="social-links" data-aos="fade-up" data-aos-delay="400">
+                            <a href="#"><i class="bi bi-twitter"></i></a>
+                            <a href="#"><i class="bi bi-linkedin"></i></a>
+                            <a href="#"><i class="bi bi-github"></i></a>
+                            <a href="#"><i class="bi bi-instagram"></i></a>
+                        </div>
                     </div>
+                </div>
 
-                </section><!-- /Hero Section -->
+                <div class="col-lg-6 hero-image" data-aos="fade-left" data-aos-delay="200">
+                    <div class="image-container">
+                        <div class="floating-elements">
 
-
-                <section id="about" class="about section">
-
-                    <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-                        <div class="row">
-                            <div class="col-lg-5" data-aos="zoom-in" data-aos-delay="200">
-                                <div class="profile-card">
-                                    <div class="profile-header">
-                                        <div class="profile-image">
-                                            <img src="../../assets/img/profile/chris.jfif" alt="Profile Image"
-                                                class="img-fluid">
-                                        </div>
-                                        <div class="profile-badge">
-                                            <i class="bi bi-check-circle-fill"></i>
-                                        </div>
-                                    </div>
-
-                                    <div class="profile-content">
-                                        <h3>Christmiel Djohi</h3>
-                                        <p class="profession">Développeuse Backend & Analyste Cybersécurité</p>
-
-                                        <div class="contact-links">
-                                            <a href="mailto:cdhohi@gmail.com" class="contact-item">
-                                                <i class="bi bi-envelope"></i>
-                                                djohichristmiel&#64;gmail.com
-                                            </a>
-                                            <a href="tel:+2290165826705" class="contact-item">
-                                                <i class="bi bi-telephone"></i>
-                                                +229 01 64 96 06 03
-
-                                            </a>
-                                            <a href="#" class="contact-item">
-                                                <i class="bi bi-geo-alt"></i>
-                                                Abomey-Calavi, Bénin
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                </div>
+                            <div class="floating-card card-1" data-aos="zoom-in" data-aos-delay="300">
+                                <i class="bi bi-server"></i>
+                                <span>Backend</span>
                             </div>
 
-                            <div class="col-lg-7" data-aos="fade-left" data-aos-delay="300">
-                                <div class="about-content">
-                                    <div class="section-header">
-                                        <span class="badge-text">À propos de moi</span>
-                                        <h2>Passionnée par le développement backend et les architectures sécurisées</h2>
-                                    </div>
+                            <div class="floating-card card-2" data-aos="zoom-in" data-aos-delay="400">
+                                <i class="bi bi-database"></i>
+                                <span>Bases de Données</span>
+                            </div>
 
-                                    <div class="description">
-                                        <p>Développeuse Backend spécialisée en PHP Laravel et C# .NET, j conçois des
-                                            applications
-                                            robustes, performantes et sécurisées. Mon objectif est de fournir des
-                                            solutions fiables
-                                            capables de soutenir les besoins techniques et stratégiques des
-                                            organisations.</p>
+                            <div class="floating-card card-3" data-aos="zoom-in" data-aos-delay="500">
+                                <i class="bi bi-shield-lock"></i>
+                                <span>Sécurité</span>
+                            </div>
 
-                                        <p>Je mets l’accent sur la qualité du code, l’optimisation des performances, la
-                                            sécurité,
-                                            l’intégration d’API, ainsi que la scalabilité des applications. Chaque
-                                            projet est pour moi
-                                            l’opportunité de bâtir une architecture solide et durable.</p>
-                                    </div>
+                        </div>
 
-                                    <div class="stats-grid">
-                                        <div class="stat-item">
-                                            <div class="stat-number">12+</div>
-                                            <div class="stat-label">Projets réalisés</div>
-                                        </div>
-                                        <div class="stat-item">
-                                            <div class="stat-number">5+</div>
-                                            <div class="stat-label">Ans d'expérience</div>
-                                        </div>
-                                        <div class="stat-item">
-                                            <div class="stat-number">95%</div>
-                                            <div class="stat-label">Satisfaction client</div>
-                                        </div>
-                                    </div>
+                        <img src="assets/img/profile/chris.jfif" alt="Portfolio Hero" class="img-fluid hero-main-image">
+                        <div class="image-overlay"></div>
+                    </div>
+                </div>
 
-                                    <div class="cta-section">
-                                        <a (click)="downloadCV()" class="btn btn-primary" [class.disabled]="isLoading">
+            </div>
+        </div>
+
+    </section>
+    <br><br><br>
+
+
+    <!-- /Hero Section --
+
+   <!-- About Section Backend -->
+    <section id="about" class="about section mb-3">
+
+        <!-- Section Title -->
+        <div class="container section-title">
+            <h2>À propos</h2>
+            <p>Spécialiste du développement back-end, je conçois des architectures robustes, sécurisées et évolutives.
+            </p>
+        </div><!-- End Section Title -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-5" data-aos="fade-right" data-aos-delay="200">
+                    <div class="profile-image-wrapper">
+                        <div class="profile-image">
+                            <img src="assets/img/profile/chris.jfif" alt="Photo professionnelle" class="img-fluid">
+                        </div>
+                        <div class="signature-section">
+                            <h3>Christmiel DJOHI</h3>
+                            <p class="quote">Développer des APIs performantes et sécurisées au service de vos projets.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7" data-aos="fade-left" data-aos-delay="300">
+                    <div class="about-content">
+                        <div class="intro">
+                            <h2 id="font">Bonjour, je suis Christmiel — Développeuse Backend</h2>
+                            <p id="font">
+                                Avec plusieurs années d’expérience en PHP Laravel, C# .NET et gestion de bases de
+                                données,
+                                je conçois des solutions back-end solides, évolutives et sécurisées.
+                                Ma priorité est d’optimiser la performance, la maintenabilité et la sécurité des
+                                applications.
+                            </p>
+                        </div>
+
+                        <div class="skills-grid">
+                            <div class="skill-item" data-aos="zoom-in" data-aos-delay="400">
+                                <div class="skill-icon">
+                                    <i class="bi bi-server"></i>
+                                </div>
+                                <h4>Architecture Backend</h4>
+                                <p>Design de systèmes modulaire, APIs REST, microservices, gestion des données.</p>
+                            </div>
+
+                            <div class="skill-item" data-aos="zoom-in" data-aos-delay="450">
+                                <div class="skill-icon">
+                                    <i class="bi bi-shield-lock"></i>
+                                </div>
+                                <h4>Sécurité Applicative</h4>
+                                <p>Authentification, autorisation, protection contre les vulnérabilités (XSS, CSRF).</p>
+                            </div>
+
+                            <div class="skill-item" data-aos="zoom-in" data-aos-delay="500">
+                                <div class="skill-icon">
+                                    <i class="bi bi-database"></i>
+                                </div>
+                                <h4>Gestion des Bases de Données</h4>
+                                <p>Modélisation, optimisation des requêtes SQL, migrations et sauvegardes.</p>
+                            </div>
+                        </div>
+
+                        <div id="font" class="journey-timeline" data-aos="fade-up" data-aos-delay="300">
+                            <div class="timeline-item">
+                                <div class="year">2020</div>
+                                <div class="description">Début professionnel en développement backend PHP et C#</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="year">2022</div>
+                                <div class="description">Conception d’API sécurisées pour des applications critiques
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="year">2024</div>
+                                <div class="description">Optimisation et maintenance de systèmes backend à haute charge
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="font" class="cta-section" data-aos="fade-up" data-aos-delay="400">
+                            <div class="fun-fact">
+                                <span class="emoji">⚙️</span>
+                                <span class="text">Passionnée par les défis techniques complexes et l’amélioration
+                                    continue.</span>
+                            </div>
+                            <div class="action-buttons">
+                                <a href="#portfolio" class="btn btn-primary">Voir mes projets backend</a>
+  <a (click)="downloadCV()" class="btn btn-primary" [class.disabled]="isLoading">
                                             <i *ngIf="!isLoading" class="bi bi-download"></i>
                                             <span *ngIf="isLoading" class="spinner-border spinner-border-sm"
                                                 role="status" aria-hidden="true"></span>
                                             {{ isLoading ? 'Téléchargement...' : 'Télécharger CV' }}
-                                        </a>
-                                        <a href="#contact" class="btn btn-outline">
-                                            <i class="bi bi-chat-dots"></i>
-                                            Discutons
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
+                                        </a>                            </div>
                         </div>
 
                     </div>
+                </div>
 
-                </section><!-- /About Section -->
-
-                <!-- Skills Section -->
-                <section id="skills" class="skills section">
-
-                    <!-- Section Title -->
-                    <div class="container section-title" data-aos="fade-up">
-                        <h2>Compétences Techniques</h2>
-                        <p>Expertise solide en développement Backend, APIs sécurisées et architectures performantes</p>
-                    </div>
-
-                    <div class="container" data-aos="fade-up" data-aos-delay="100">
-                        <div class="row">
-
-                            <!-- Front-end (Base nécessaire) -->
-                            <div class="col-lg-4 mb-2 mt-2">
-                                <div class="skills-category" data-aos="fade-up" data-aos-delay="200">
-                                    <h3><i class="bi bi-code-slash"></i> Front-end (Bases)</h3>
-                                    <div class="skills-animation">
-
-                                        <div class="skill-item">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <h4>HTML5 / CSS3</h4>
-                                                <span class="skill-percentage">90%</span>
-                                            </div>
-                                            <div class="progress">
-                                                <div class="progress-bar" role="progressbar"></div>
-                                            </div>
-                                            <div class="skill-tooltip">Structure sémantique, responsive et intégration
-                                                propre</div>
-                                        </div>
-
-                                        <div class="skill-item">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <h4>JavaScript</h4>
-                                                <span class="skill-percentage">80%</span>
-                                            </div>
-                                            <div class="progress">
-                                                <div class="progress-bar" role="progressbar"></div>
-                                            </div>
-                                            <div class="skill-tooltip">DOM, appels API, logique front essentielle</div>
-                                        </div>
-
-                                        <div class="skill-item">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <h4>Angular (Bases)</h4>
-                                                <span class="skill-percentage">75%</span>
-                                            </div>
-                                            <div class="progress">
-                                                <div class="progress-bar" role="progressbar"></div>
-                                            </div>
-                                            <div class="skill-tooltip">Composants, services, consommation API REST</div>
-                                        </div>
-
-                                        <div class="skill-item">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <h4>Bootstrap / Tailwind</h4>
-                                                <span class="skill-percentage">90%</span>
-                                            </div>
-                                            <div class="progress">
-                                                <div class="progress-bar" role="progressbar"></div>
-                                            </div>
-                                            <div class="skill-tooltip">Intégration d’interfaces simples et modernes
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Frontend -->
-
-                            <!-- Backend -->
-                            <div class="col-lg-4 mb-2 mt-2">
-                                <div style="background-color: #1e3d59; border:1px solid #fff" class="skills-category"
-                                    data-aos="fade-up" data-aos-delay="300">
-                                    <h3><i class="bi bi-server"></i> Développement Back-end</h3>
-
-                                    <div class="skills-animation">
-                                        <div class="skill-item">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <h4>Laravel</h4>
-                                                <span class="skill-percentage">90%</span>
-                                            </div>
-                                            <div class="progress">
-                                                <div class="progress-bar" role="progressbar"></div>
-                                            </div>
-                                            <div class="skill-tooltip">Eloquent, migrations, API REST, sécurité, queues
-                                            </div>
-                                        </div>
-
-                                        <div class="skill-item">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <h4>PHP (OOP)</h4>
-                                                <span class="skill-percentage">88%</span>
-                                            </div>
-                                            <div class="progress">
-                                                <div class="progress-bar" role="progressbar"></div>
-                                            </div>
-                                            <div class="skill-tooltip">POO avancée, architecture MVC, design patterns
-                                            </div>
-                                        </div>
-
-                                        <div class="skill-item">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <h4>APIs REST / Sécurisées</h4>
-                                                <span class="skill-percentage">92%</span>
-                                            </div>
-                                            <div class="progress">
-                                                <div class="progress-bar" role="progressbar"></div>
-                                            </div>
-                                            <div class="skill-tooltip">JWT, OAuth2, permissions, authentification, rate
-                                                limiting</div>
-                                        </div>
-
-                                        <div class="skill-item">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <h4>C# / .NET (Bases)</h4>
-                                                <span class="skill-percentage">70%</span>
-                                            </div>
-                                            <div class="progress">
-                                                <div class="progress-bar" role="progressbar"></div>
-                                            </div>
-                                            <div class="skill-tooltip">API controllers, services, logique métier</div>
-                                        </div>
-
-                                        <div class="skill-item">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <h4>Sécurité Applicative</h4>
-                                                <span class="skill-percentage">85%</span>
-                                            </div>
-                                            <div class="progress">
-                                                <div class="progress-bar" role="progressbar"></div>
-                                            </div>
-                                            <div class="skill-tooltip">Protection XSS, CSRF, validation, hashing, audits
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Backend -->
-
-                            <!-- Database & Tools -->
-                            <div class="col-lg-4 mb-2 mt-2">
-                                <div class="skills-category" data-aos="fade-up" data-aos-delay="400">
-                                    <h3><i class="bi bi-tools"></i> Bases de données & Outils</h3>
-                                    <div class="skills-animation">
-
-                                        <div class="skill-item">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <h4>MySQL</h4>
-                                                <span class="skill-percentage">87%</span>
-                                            </div>
-                                            <div class="progress">
-                                                <div class="progress-bar"></div>
-                                            </div>
-                                            <div class="skill-tooltip">Modélisation, optimisation, indexation</div>
-                                        </div>
-
-                                        <div class="skill-item">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <h4>Git / GitHub</h4>
-                                                <span class="skill-percentage">90%</span>
-                                            </div>
-                                            <div class="progress">
-                                                <div class="progress-bar"></div>
-                                            </div>
-                                            <div class="skill-tooltip">Branches, workflow Git, CI/CD</div>
-                                        </div>
-
-                                        <div class="skill-item">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <h4>Docker</h4>
-                                                <span class="skill-percentage">75%</span>
-                                            </div>
-                                            <div class="progress">
-                                                <div class="progress-bar"></div>
-                                            </div>
-                                            <div class="skill-tooltip">Conteneurisation, docker-compose, déploiements
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Database -->
-                        </div>
-
-                        <!-- Additional Skills -->
-                        <div class="row mt-5">
-                            <div class="col-12">
-                                <div class="skills-category" data-aos="fade-up" data-aos-delay="500">
-                                    <h3><i class="bi bi-star-fill"></i> Compétences Complémentaires</h3>
-                                    <div class="row">
-
-                                        <div class="col-md-3 col-6">
-                                            <div class="skill-badge">
-                                                <i class="bi bi-shield-lock"></i>
-                                                <span>Sécurité Web</span>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-3 col-6">
-                                            <div class="skill-badge">
-                                                <i class="bi bi-diagram-3"></i>
-                                                <span>Architecture Logicielle</span>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-3 col-6">
-                                            <div class="skill-badge">
-                                                <i class="bi bi-bug"></i>
-                                                <span>Debugging avancé</span>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-3 col-6">
-                                            <div class="skill-badge">
-                                                <i class="bi bi-speedometer2"></i>
-                                                <span>Optimisation Backend</span>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-3 col-6">
-                                            <div class="skill-badge">
-                                                <i class="bi bi-share"></i>
-                                                <span>Agile / Scrum</span>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-3 col-6">
-                                            <div class="skill-badge">
-                                                <i class="bi bi-cloud-upload"></i>
-                                                <span>Déploiement</span>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </section>
-                <!-- /Skills Section -->
-
-                <!-- Resume Section -->
-                <section id="resume" class="resume section">
-
-                    <!-- Section Title -->
-                    <div class="container section-title" data-aos="fade-up">
-                        <h2>Curriculum Vitae</h2>
-                        <p>Dynamique, autonome, sociable et passionnée par le numérique, je mets mon énergie au service
-                            de projets
-                            innovants alliant efficacité, modernité et performance.</p>
-                    </div>
-
-                    <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-                        <div class="row gy-4">
-                            <!-- Left column -->
-                            <div class="col-lg-4">
-                                <div class="resume-side" data-aos="fade-right">
-
-                                    <!-- Photo -->
-                                    <div class="profile-img mb-4">
-                                        <img src="../../assets/img/profile/chris.jfif" alt="Christmiel Djohi"
-                                            class="img-fluid rounded">
-                                    </div>
-
-                                    <!-- Atouts -->
-                                    <h3>Atouts</h3>
-                                    <ul class="list-unstyled">
-                                        <li>Sociable</li>
-                                        <li>Intelligence émotionnelle</li>
-                                        <li>Dynamique & Autonome</li>
-                                    </ul>
-
-                                    <!-- Centres d'intérêt -->
-                                    <h3 class="mt-4">Centres d'intérêt</h3>
-                                    <ul class="list-unstyled">
-                                        <li>Sport</li>
-                                        <li>Lecture</li>
-                                        <li>Énigmes</li>
-                                        <li>Programmation</li>
-                                        <li>Informatique</li>
-                                    </ul>
-
-                                    <!-- Langues -->
-                                    <h3 class="mt-4">Langues</h3>
-                                    <ul class="list-unstyled">
-                                        <li>Français — Langue maternelle</li>
-                                        <li>Anglais — Niveau scolaire</li>
-                                    </ul>
-
-                                    <!-- Coordonnées -->
-                                    <h3 class="mt-4">Coordonnées</h3>
-                                    <ul class="contact-info list-unstyled">
-                                        <li><i class="bi bi-envelope"></i> djohichristmiel&#64;gmail.com</li>
-                                        <li><i class="bi bi-geo-alt"></i> Abomey-Calavi, Bénin</li>
-                                        <li><i class="bi bi-calendar"></i> Née le 26/04/2001</li>
-                                        <li><i class="bi bi-flag"></i> Béninoise</li>
-                                        <li><i class="bi bi-phone"></i> +229 64 96 06 03</li>
-                                        <li><i class="bi bi-facebook"></i> Christmiel Djohi</li>
-                                    </ul>
-
-                                </div>
-                            </div>
-
-                            <!-- Right column -->
-                            <div class="col-lg-8 ps-4 ps-lg-5">
-
-                                <!-- Formations -->
-                                <div class="resume-section" data-aos="fade-up">
-                                    <h3><i class="bi bi-mortarboard me-2"></i>Diplômes & Formations</h3>
-
-                                    <div class="resume-item">
-                                        <h4>Certif Cyber 5.2.100</h4>
-                                        <h5>Fév 2023 — Juil 2023</h5>
-                                        <p class="company"><i class="bi bi-building"></i> Proxymex Academy —
-                                            Abomey-Calavi, Bénin</p>
-                                    </div>
-
-                                    <div class="resume-item">
-                                        <h4>Licence Professionnelle en Système Informatique et Logiciel</h4>
-                                        <h5>2020 — 2023</h5>
-                                        <p class="company"><i class="bi bi-building"></i> École Supérieure Le Faucon —
-                                            Abomey-Calavi</p>
-                                    </div>
-
-                                    <div class="resume-item">
-                                        <h4>Baccalauréat Série C</h4>
-                                        <h5>2020</h5>
-                                        <p class="company"><i class="bi bi-building"></i> Collège Mgr Steinmetz —
-                                            Bohicon</p>
-                                    </div>
-                                </div>
-
-                                <!-- Expériences -->
-                                <div class="resume-section" data-aos="fade-up" data-aos-delay="100">
-                                    <h3><i class="bi bi-briefcase me-2"></i>Expériences Professionnelles</h3>
-
-                                    <div class="resume-item">
-                                        <h4>Ingénieur d’exploitation Informatique</h4>
-                                        <h5>Depuis Sept 2023</h5>
-                                        <p class="company"><i class="bi bi-building"></i> Iwaju Tech — Abomey-Calavi</p>
-                                        <ul>
-                                            <li>Conception d’API pour divers projets</li>
-                                            <li>Correction de bugs et optimisation des plateformes clients</li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="resume-item">
-                                        <h4>Développeur Web — Stage</h4>
-                                        <h5>Fév 2023 — Juil 2023</h5>
-                                        <p class="company"><i class="bi bi-building"></i> Iwaju Tech — Abomey-Calavi</p>
-                                        <ul>
-                                            <li>Modélisation 3D (Blender) de lieux de la ville de Ouidah</li>
-                                            <li>Création d’une plateforme d’expérience virtuelle</li>
-                                            <li>Utilisation de A-Frame, Blender et Laravel</li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="resume-item">
-                                        <h4>Développeur Web — Stage</h4>
-                                        <h5>Août 2022 — Oct 2022</h5>
-                                        <p class="company"><i class="bi bi-building"></i> Fun High Tech — Abomey-Calavi
-                                        </p>
-                                        <ul>
-                                            <li>Utilisation de Chart.js pour la dynamisation de graphiques</li>
-                                            <li>Création d'un site web d’immobilier (HTML5, CSS, PHP, JS)</li>
-                                            <li>Intégration du paiement en ligne Fedapay</li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="resume-item">
-                                        <h4>Développeur Web — Stage</h4>
-                                        <h5>Août 2021 — Sept 2021</h5>
-                                        <p class="company"><i class="bi bi-building"></i> IITECH SARL — Abomey-Calavi
-                                        </p>
-                                        <ul>
-                                            <li>Création d'un système de messagerie simple (PHP, Bootstrap, MySQL)</li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <!-- Compétences -->
-                                <div class="resume-section" data-aos="fade-up" data-aos-delay="150">
-                                    <h3><i class="bi bi-tools me-2"></i>Compétences</h3>
-
-                                    <ul>
-                                        <li>Base de données : MySQL, PostgreSQL, SQL Server</li>
-                                        <li>Java Spring Boot — Débutante</li>
-                                        <li>C# .NET — Niveau intermédiaire</li>
-                                        <li>PHP Laravel — Niveau avancé</li>
-                                        <li>Capacité à concevoir les user cases d’un projet</li>
-                                        <li>Maîtrise complète du Pack Office</li>
-                                        <li>Visual Studio & Visual Studio Code</li>
-                                    </ul>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-                </section>
-                <!-- /Resume Section -->
-
-                <section id="portfolio" class="portfolio section">
-
-                    <!-- Section Title -->
-                    <div class="container section-title" data-aos="fade-up">
-                        <h2>Portfolio</h2>
-                        <p>Découvrez mes réalisations web et mobile où j'ai mis en œuvre mes compétences en
-                            développement front-end, back-end et en expérience utilisateur.</p>
-                    </div><!-- End Section Title -->
-
-                    <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-                        <div class="isotope-layout" data-default-filter="*" data-layout="masonry"
-                            data-sort="original-order">
-
-                            <div class="row">
-                                <div class="col-lg-3 filter-sidebar">
-                                    <div class="filters-wrapper" data-aos="fade-right" data-aos-delay="150">
-                                        <ul class="portfolio-filters isotope-filters">
-                                            <li (click)="setFilter('*')" [class.filter-active]="selectedFilter === '*'">
-                                                Tous les projets
-                                            </li>
-
-                                            <li (click)="setFilter('web')"
-                                                [class.filter-active]="selectedFilter === 'web'">
-                                                Application Web
-                                            </li>
-
-                                            <li (click)="setFilter('mobile')"
-                                                [class.filter-active]="selectedFilter === 'mobile'">
-                                                Applications Mobile
-                                            </li>
-
-                                            <li (click)="setFilter('official')"
-                                                [class.filter-active]="selectedFilter === 'official'">
-                                                Sites Officiels
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-9">
-                                    <div class="row gy-4 portfolio-container isotope-container" data-aos="fade-up"
-                                        data-aos-delay="200">
-
-                                        <div class="col-lg-6 col-md-6 portfolio-item" *ngFor="let p of projects"
-                                            [hidden]="selectedFilter !== '*' && !p.category.includes(selectedFilter)">
-                                            <div class="portfolio-wrap">
-                                                <img [src]="p.img" class="img-fluid" [alt]="p.title">
-
-                                                <div class="portfolio-info">
-                                                    <div class="content">
-                                                        <h4 class="text-white">{{ p.title }}</h4>
-
-                                                        <div class="portfolio-links">
-                                                            <a [href]="p.link" target="_blank">
-                                                                <i class="bi bi-arrow-right"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div><!-- End Portfolio Container -->
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </section>
-                <!-- Services Section -->
-                <section id="services" class="services section">
-
-                    <!-- Section Title -->
-                    <div class="container section-title" data-aos="fade-up">
-                        <h2>Services</h2>
-                        <p>Solutions backend fiables, sécurisées et performantes pour vos applications et systèmes.</p>
-                    </div>
-
-                    <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-                        <div class="service-header">
-                            <div class="row align-items-center">
-                                <div class="col-lg-8 col-md-12">
-                                    <div class="service-intro">
-                                        <h2 class="service-heading">
-                                            <div>Développement</div>
-                                            <div><span>Backend & Architecture API</span></div>
-                                        </h2>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-12">
-                                    <div class="service-summary">
-                                        <p>
-                                            Conception et développement de services backend robustes, APIs sécurisées,
-                                            systèmes
-                                            distribués et architectures scalables pour vos plateformes et applications
-                                            métier.
-                                        </p>
-                                        <a href="#contact" class="service-btn">
-                                            Discutons de votre projet
-                                            <i class="bi bi-arrow-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row justify-content-center">
-
-                            <!-- API Development -->
-                            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                                <div class="service-card position-relative z-1">
-                                    <div class="service-icon">
-                                        <i class="bi bi-server"></i>
-                                    </div>
-                                    <h3><a>Développement d’APIs</a></h3>
-                                    <p>
-                                        Création d’APIs REST et GraphQL performantes avec Laravel, Node.js et PHP.
-                                        Gestion des routes, middlewares, authentification et optimisation des endpoints.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Database & Data Architecture -->
-                            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                                <div class="service-card position-relative z-1">
-                                    <div class="service-icon">
-                                        <i class="bi bi-database"></i>
-                                    </div>
-                                    <h3><a>Base de données & optimisation</a></h3>
-                                    <p>
-                                        Modélisation, optimisation et gestion avancée des bases MySQL, PostgreSQL,
-                                        MongoDB. Requêtes optimisées, indexation, migrations, réplication et sécurité.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Security -->
-                            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                                <div class="service-card position-relative z-1">
-                                    <div class="service-icon">
-                                        <i class="bi bi-shield-lock"></i>
-                                    </div>
-                                    <h3><a>Sécurité Applicative</a></h3>
-                                    <p>
-                                        Mise en place de mécanismes de sécurité : JWT, OAuth2, permissions, chiffrage,
-                                        protection contre les attaques (XSS, CSRF, SQL Injection). Bonnes pratiques
-                                        OWASP.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Architecture & Scalability -->
-                            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                                <div class="service-card position-relative z-1">
-                                    <div class="service-icon">
-                                        <i class="bi bi-diagram-3"></i>
-                                    </div>
-                                    <h3><a>Architecture logicielle</a></h3>
-                                    <p>
-                                        Conception d'architectures modulaires, microservices, queues (Redis, RabbitMQ),
-                                        systèmes distribués et solutions hautement scalables.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- DevOps & Deployment -->
-                            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                                <div class="service-card position-relative z-1">
-                                    <div class="service-icon">
-                                        <i class="bi bi-gear"></i>
-                                    </div>
-                                    <h3><a>DevOps & Déploiement</a></h3>
-                                    <p>
-                                        Intégration CI/CD, conteneurisation Docker, déploiement sur Linux, VPS,
-                                        hébergement cloud, automatisation et monitoring des services backend.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Performance -->
-                            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                                <div class="service-card position-relative z-1">
-                                    <div class="service-icon">
-                                        <i class="bi bi-speedometer2"></i>
-                                    </div>
-                                    <h3><a>Optimisation & Performance</a></h3>
-                                    <p>
-                                        Analyse des performances, amélioration de la rapidité des APIs, cache (Redis),
-                                        optimisation des requêtes SQL et réduction du temps de réponse serveur.
-                                    </p>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </section>
-                <!-- /Services Section -->
-                <!-- Testimonials Section -->
-                <section id="testimonials" class="testimonials section light-background">
-
-                    <!-- Section Title -->
-                    <div class="container section-title" data-aos="fade-up">
-                        <h2>Témoignages</h2>
-                        <p>Ce que mes collaborateurs disent de mon travail</p>
-                    </div>
-
-                    <div class="container">
-
-                        <div class="testimonial-masonry">
-
-                            <div class="testimonial-item" data-aos="fade-up">
-                                <div class="testimonial-content">
-                                    <div class="quote-pattern">
-                                        <i class="bi bi-quote"></i>
-                                    </div>
-                                    <p>Un développeur backend très rigoureux, capable de concevoir des APIs robustes
-                                        et parfaitement documentées. Collaboration fluide et professionnalisme au top.
-                                    </p>
-                                    <div class="client-info">
-                                        <div class="client-image">
-                                            <img src="../../assets/img/profile/gontran.png" alt="Gontran">
-                                        </div>
-                                        <div class="client-details">
-                                            <h3>Obayomi ADJIBOLA</h3>
-                                            <span class="position">UI/UX Designer</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="testimonial-item highlight" data-aos="fade-up" data-aos-delay="100">
-                                <div class="testimonial-content">
-                                    <div class="quote-pattern">
-                                        <i class="bi bi-quote"></i>
-                                    </div>
-                                    <p>Travail impeccable sur les services backend. Maîtrise parfaite de .NET, Laravel
-                                        et de l’architecture des web services sécurisés. Une référence pour tout projet
-                                        nécessitant un backend performant et fiable.</p>
-
-                                    <div class="client-info">
-                                        <div class="client-image">
-                                            <img src="../../assets/img/profile/photo_iréné_lokossou.jpg"
-                                                alt="Irene Lokossou">
-                                        </div>
-                                        <div class="client-details">
-                                            <h3>Irene Lokossou</h3>
-                                            <span class="position">Développeur web | mobile</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
-                                <div class="testimonial-content">
-                                    <div class="quote-pattern">
-                                        <i class="bi bi-quote"></i>
-                                    </div>
-                                    <p>Un collaborateur fiable, efficace et très méthodique. Son expertise backend
-                                        et sa maîtrise de Laravel ont été essentielles dans plusieurs de nos projets.
-                                    </p>
-                                    <div class="client-info">
-                                        <div class="client-image">
-                                            <img src="../../assets/img/profile/caroline.jfif" alt="Caroline Meha">
-                                        </div>
-                                        <div class="client-details">
-                                            <h3>Caroline Meha</h3>
-                                            <span class="position">Software Engineer | UI/UX Designer</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </section>
-                <!-- /Testimonials Section -->
-
-                <!-- Contact Section -->
-                <section id="contact" class="contact section">
-
-                    <!-- Section Title -->
-                    <div class="container section-title" data-aos="fade-up">
-                        <h2>Contact</h2>
-                        <p>Besoin d’un backend robuste, sécurisé et performant ? Contactez-moi pour discuter de votre
-                            projet.</p>
-                    </div>
-
-                    <div class="container">
-
-                        <div class="row g-4 g-lg-5">
-                            <div class="col-lg-5">
-                                <div class="info-box">
-                                    <h3>Coordonnées</h3>
-                                    <p>Disponible pour des projets backend, la création d’APIs sécurisées et des
-                                        architectures web performantes.</p>
-
-                                    <div class="info-item">
-                                        <div class="icon-box">
-                                            <i class="bi bi-geo-alt"></i>
-                                        </div>
-                                        <div class="content">
-                                            <h4>Localisation</h4>
-                                            <p>Abomey-Calavi</p>
-                                            <p>Bénin</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="info-item">
-                                        <div class="icon-box">
-                                            <i class="bi bi-telephone"></i>
-                                        </div>
-                                        <div class="content">
-                                            <h4>Téléphone</h4>
-                                            <p>+229 01-65-82-67-05</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="info-item">
-                                        <div class="icon-box">
-                                            <i class="bi bi-envelope"></i>
-                                        </div>
-                                        <div class="content">
-                                            <h4>Email</h4>
-                                            <p>djohichristmiel&#64;gmail.com</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-7">
-                                <div class="contact-form">
-                                    <h3>Envoyez un message</h3>
-                                    <p>Expliquez votre besoin backend ou API, et je vous répondrai rapidement.</p>
-
-                                    <form class="php-email-form" #contactForm="ngForm"
-                                        (ngSubmit)="sendMessage(contactForm)">
-                                        <div class="row gy-4">
-
-                                            <div class="col-md-6">
-                                                <input [(ngModel)]="item.nom" type="text" name="nom"
-                                                    class="form-control" placeholder="Votre nom" required
-                                                    #nom="ngModel">
-                                                <div *ngIf="nom.invalid && nom.touched" class="error-message">Veuillez
-                                                    entrer votre nom.</div>
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <input [(ngModel)]="item.email" type="email" class="form-control"
-                                                    name="email" placeholder="Votre email" required #email="ngModel">
-                                                <div *ngIf="email.invalid && email.touched" class="error-message">
-                                                    Veuillez entrer un email valide.</div>
-                                            </div>
-
-                                            <div class="col-12">
-                                                <input [(ngModel)]="item.subject" type="text" class="form-control"
-                                                    name="subject" placeholder="Sujet" required #subject="ngModel">
-                                                <div *ngIf="subject.invalid && subject.touched" class="error-message">
-                                                    Veuillez entrer le sujet.</div>
-                                            </div>
-
-                                            <div class="col-12">
-                                                <textarea [(ngModel)]="item.message" class="form-control" name="message"
-                                                    rows="6" placeholder="Votre message" required
-                                                    #message="ngModel"></textarea>
-                                                <div *ngIf="message.invalid && message.touched" class="error-message">
-                                                    Veuillez entrer votre message.</div>
-                                            </div>
-
-                                            <div class="col-12 text-center">
-                                                <div *ngIf="isLoading" class="loading">Chargement...</div>
-                                                <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
-                                                <div *ngIf="successMessage" class="sent-message">{{ successMessage }}
-                                                </div>
-
-                                                <button type="submit" class="btn"
-                                                    [disabled]="isLoading || contactForm.invalid">
-
-                                                    <span *ngIf="!isLoading">Envoyer le message</span>
-
-                                                    <span *ngIf="isLoading" class="spinner-border spinner-border-sm"
-                                                        role="status" aria-hidden="true"></span>
-                                                    <span *ngIf="isLoading"> Envoi...</span>
-
-                                                </button>
-
-                                            </div>
-
-                                        </div>
-                                    </form>
-
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </section>
-                <!-- /Contact Section -->
-            </main>
+            </div>
 
         </div>
-    </div>
+
+    </section>
 
 
-</section>
+    <!-- Resume Section -->
+    <section id="resume font" class="resume section">
+
+        <!-- Section Title -->
+        <br><br><br>
+        <div class="container section-title">
+            <h2>Curriculum Vitae</h2>
+            <p>Dynamique, motivée et passionnée par le numérique, je mets mes compétences au service de projets modernes
+                et performants.</p>
+        </div><!-- End Section Title -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row">
+                <div style="  font-family: 'Montserrat-Medium';" class="col-lg-6" data-aos="fade-right"
+                    data-aos-delay="200">
+                    <div class="experience-section">
+                        <div class="section-header">
+                            <h2><i class="bi bi-briefcase"></i> Parcours Professionnel</h2>
+                            <p id="font" class="section-subtitle fs-6">Expériences acquises grâce à divers projets,
+                                stages et missions orientés technologies et innovation.</p>
+                        </div>
+
+                        <div class="experience-cards">
+
+                            <div style="  font-family: 'Montserrat-Medium';" class="experience-card" data-aos="zoom-in"
+                                data-aos-delay="300">
+                                <div class="card-header">
+                                    <div class="role-info">
+                                        <h3 id="font">Ingénieur d’Exploitation Informatique</h3>
+                                        <h4>Iwaju Tech</h4>
+                                    </div>
+                                    <span class="duration">2023 - Présent</span>
+                                </div>
+                                <div style="  font-family: 'Montserrat-Medium';" class="card-body">
+                                    <p id="font  fs-2">Participation à la conception, au développement et au maintien de
+                                        solutions numériques pour divers projets clients.</p>
+                                    <ul class="achievements">
+                                        <li>Conception d’API pour plusieurs plateformes</li>
+                                        <li>Correction de bugs et optimisation des applications</li>
+                                        <li>Amélioration continue des performances techniques</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="experience-card" data-aos="zoom-in" data-aos-delay="400">
+                                <div class="card-header">
+                                    <div class="role-info">
+                                        <h3>Développeuse Web — Stage</h3>
+                                        <h4>Iwaju Tech</h4>
+                                    </div>
+                                    <span class="duration">2023</span>
+                                </div>
+                                <div class="card-body">
+                                    <p>Contribution à la création d'une plateforme immersive et réalisation de
+                                        modélisations 3D de lieux touristiques.</p>
+                                    <ul class="achievements">
+                                        <li>Modélisation 3D (Blender)</li>
+                                        <li>Création d’une expérience virtuelle (A-Frame)</li>
+                                        <li>Développement backend avec Laravel</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="experience-card" data-aos="zoom-in" data-aos-delay="500">
+                                <div class="card-header">
+                                    <div class="role-info">
+                                        <h3>Développeuse Web — Stage</h3>
+                                        <h4>Fun High Tech</h4>
+                                    </div>
+                                    <span class="duration">2022</span>
+                                </div>
+                                <div class="card-body">
+                                    <p>Participation au développement d’un site immobilier et intégration de solutions
+                                        de paiement.</p>
+                                    <ul class="achievements">
+                                        <li>Création de graphiques dynamiques (Chart.js)</li>
+                                        <li>Développement web (HTML5, CSS, PHP, JS)</li>
+                                        <li>Intégration du paiement Fedapay</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right column -->
+                <div style="  font-family: 'Montserrat-Medium';" class="col-lg-6" data-aos="fade-left"
+                    data-aos-delay="200">
+                    <div class="education-section">
+                        <div class="section-header">
+                            <h2><i class="bi bi-mortarboard"></i> Parcours Académique</h2>
+                            <p class="section-subtitle">Formations orientées informatique, cybersécurité et
+                                développement logiciel.</p>
+                        </div>
+
+                        <div class="education-timeline">
+                            <div class="timeline-track"></div>
+
+                            <div class="education-item" data-aos="slide-up" data-aos-delay="300">
+                                <div class="timeline-marker"></div>
+                                <div class="education-content">
+                                    <div class="degree-header">
+                                        <h3>Certif Cyber 5.2.100</h3>
+                                        <span class="year">2023</span>
+                                    </div>
+                                    <h4 class="institution">Proxymex Academy</h4>
+                                    <p>Formation en cybersécurité et initiation aux méthodologies de protection des
+                                        systèmes.</p>
+                                </div>
+                            </div>
+
+                            <div class="education-item" data-aos="slide-up" data-aos-delay="400">
+                                <div class="timeline-marker"></div>
+                                <div class="education-content">
+                                    <div class="degree-header">
+                                        <h3>Licence Professionnelle en Système Informatique et Logiciel</h3>
+                                        <span class="year">2020 - 2023</span>
+                                    </div>
+                                    <h4 class="institution">École Supérieure Le Faucon</h4>
+                                    <p>Formation centrée sur le développement logiciel, le réseau et la gestion des
+                                        systèmes informatiques.</p>
+                                </div>
+                            </div>
+
+                            <div class="education-item" data-aos="slide-up" data-aos-delay="500">
+                                <div class="timeline-marker"></div>
+                                <div class="education-content">
+                                    <div class="degree-header">
+                                        <h3>Baccalauréat Série C</h3>
+                                        <span class="year">2020</span>
+                                    </div>
+                                    <h4 class="institution">Collège Mgr Steinmetz</h4>
+                                    <p>Formation scientifique orientée mathématiques et sciences physiques.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <!-- /Resume Section -->
+
+    <!-- Services Section -->
+    <br><br><br>
+    <section id="services" class="services section">
+
+        <!-- Section Title -->
+        <div class="container section-title">
+            <h2>Services</h2>
+            <p>Des solutions backend fiables, sécurisées et performantes pour répondre aux besoins de vos projets.</p>
+        </div><!-- End Section Title -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row g-4">
+
+                <!-- Card 1 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-item">
+                        <div class="icon">
+                            <i class="bi bi-stack"></i>
+                        </div>
+                        <h3>Développement d’API REST & GraphQL</h3>
+                        <p>Conception et développement d’API robustes, sécurisées et évolutives permettant à vos
+                            applications de communiquer efficacement.</p>
+
+                    </div>
+                </div><!-- End Service Item -->
+
+                <!-- Card 2 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-item">
+                        <div class="icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <h3>Sécurité & Authentification</h3>
+                        <p>Mise en place de systèmes d’authentification, contrôle d’accès, gestion des rôles, cryptage
+                            et bonnes pratiques de sécurité.</p>
+
+                    </div>
+                </div><!-- End Service Item -->
+
+                <!-- Card 3 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-item">
+                        <div class="icon">
+                            <i class="bi bi-graph-up"></i>
+                        </div>
+                        <h3>Optimisation & Performance</h3>
+                        <p>Analyse du code, amélioration des temps de réponse, optimisation des requêtes SQL et des
+                            architectures backend.</p>
+
+                    </div>
+                </div><!-- End Service Item -->
+
+                <!-- Card 4 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-item">
+                        <div class="icon">
+                            <i class="bi bi-cpu"></i>
+                        </div>
+                        <h3>Intégration Services & Microservices</h3>
+                        <p>Développement et orchestration de microservices, mise en place de communications entre
+                            services et architectures distribuées.</p>
+
+                    </div>
+                </div><!-- End Service Item -->
+
+                <!-- Card 5 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-item">
+                        <div class="icon">
+                            <i class="bi bi-cloud-arrow-up"></i>
+                        </div>
+                        <h3>Déploiement & Hébergement Cloud</h3>
+                        <p>Configuration de serveurs, CI/CD, conteneurisation (Docker), hébergement sur AWS, Azure, GCP
+                            ou services mutualisés.</p>
+
+                    </div>
+                </div><!-- End Service Item -->
+
+                <!-- Card 6 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-item">
+                        <div class="icon">
+                            <i class="bi bi-gear"></i>
+                        </div>
+                        <h3>Automatisation & Scripts Serveur</h3>
+                        <p>Création de scripts, automatisation des processus serveur, tâches planifiées et maintenance
+                            technique backend.</p>
+
+                    </div>
+                </div><!-- End Service Item -->
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- /Services Section -->
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Portfolio</h2>
+            <p>Découvrez mes réalisations web et mobile où j'ai mis en œuvre mes compétences en
+                développement front-end, back-end et en expérience utilisateur.</p>
+        </div>
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+                <!-- Filtres -->
+                <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="200">
+
+                    <li (click)="setFilter('*')" [class.filter-active]="selectedFilter === '*'">
+                        <i class="bi bi-grid-3x3"></i> Tous les projets
+                    </li>
+
+                    <li (click)="setFilter('web')" [class.filter-active]="selectedFilter === 'web'">
+                        Applications Web
+                    </li>
+
+                    <li (click)="setFilter('mobile')" [class.filter-active]="selectedFilter === 'mobile'">
+                        Applications Mobile
+                    </li>
+
+                    <li (click)="setFilter('official')" [class.filter-active]="selectedFilter === 'official'">
+                        Sites Officiels
+                    </li>
+
+                </ul>
+
+                <!-- Portfolio Grid -->
+                <div class="row g-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
+
+                    <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item" *ngFor="let p of projects"
+                        [ngClass]="'filter-' + p.category"
+                        [hidden]="selectedFilter !== '*' && !p.category.includes(selectedFilter)">
+
+                        <article class="portfolio-entry">
+                            <figure class="entry-image">
+
+                                <img [src]="p.img" class="img-fluid" [alt]="p.title" loading="lazy">
+
+                                <div class="entry-overlay">
+                                    <div class="overlay-content">
+
+                                        <div class="entry-meta">
+                                            {{ p.title }}
+                                        </div>
+
+                                        <h3 class="entry-title">
+                                            {{ p.title }}
+                                        </h3>
+
+                                        <div class="entry-links">
+
+                                            <a [href]="p.link" target="_blank">
+                                                <i class="bi bi-arrow-right"></i>
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </figure>
+                        </article>
+
+                    </div>
+
+                </div><!-- End Portfolio Container -->
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- /Portfolio Section -->
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section light-background">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Témoignages</h2>
+            <p>Ce que mes collaborateurs disent de mon travail</p>
+        </div>
+
+        <div class="container">
+
+            <div class="testimonial-masonry">
+
+                <div class="testimonial-item" data-aos="fade-up">
+                    <div class="testimonial-content">
+                        <div class="quote-pattern">
+                            <i class="bi bi-quote"></i>
+                        </div>
+                        <p>Un développeur backend très rigoureux, capable de concevoir des APIs robustes
+                            et parfaitement documentées. Collaboration fluide et professionnalisme au top.
+                        </p>
+                        <div class="client-info">
+                            <div class="client-image">
+                                <img src="../../assets/img/profile/gontran.png" alt="Gontran">
+                            </div>
+                            <div class="client-details">
+                                <h3>Obayomi ADJIBOLA</h3>
+                                <span class="position">UI/UX Designer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-item highlight" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-content">
+                        <div class="quote-pattern">
+                            <i class="bi bi-quote"></i>
+                        </div>
+                        <p>Travail impeccable sur les services backend. Maîtrise parfaite de .NET, Laravel
+                            et de l'architecture des web services sécurisés. Une référence pour tout projet
+                            nécessitant un backend performant et fiable.</p>
+
+                        <div class="client-info">
+                            <div class="client-image">
+                                <img src="../../assets/img/profile/photo_iréné_lokossou.jpg" alt="Irene Lokossou">
+                            </div>
+                            <div class="client-details">
+                                <h3>Irene Lokossou</h3>
+                                <span class="position">Développeur web | mobile</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-content">
+                        <div class="quote-pattern">
+                            <i class="bi bi-quote"></i>
+                        </div>
+                        <p>Un collaborateur fiable, efficace et très méthodique. Son expertise backend
+                            et sa maîtrise de Laravel ont été essentielles dans plusieurs de nos projets.
+                        </p>
+                        <div class="client-info">
+                            <div class="client-image">
+                                <img src="../../assets/img/profile/caroline.jfif" alt="Caroline Meha">
+                            </div>
+                            <div class="client-details">
+                                <h3>Caroline Meha</h3>
+                                <span class="position">Software Engineer | UI/UX Designer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- /Testimonials Section -->
+
+    <!-- Faq Section -->
+    <!-- /Faq Section -->
+    <br>
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Contact</h2>
+            <p>Besoin d’un backend robuste, sécurisé et performant ? Contactez-moi pour discuter de votre
+                projet.</p>
+        </div>
+
+        <div class="container">
+
+            <div class="row g-4 g-lg-5">
+                <div class="col-lg-5">
+                    <div class="info-box">
+                        <h3>Coordonnées</h3>
+                        <p>Disponible pour des projets backend, la création d’APIs sécurisées et des
+                            architectures web performantes.</p>
+
+                        <div class="info-item">
+                            <div class="icon-box">
+                                <i class="bi bi-geo-alt"></i>
+                            </div>
+                            <div class="content">
+                                <h4>Localisation</h4>
+                                <p>Abomey-Calavi</p>
+                                <p>Bénin</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="icon-box">
+                                <i class="bi bi-telephone"></i>
+                            </div>
+                            <div class="content">
+                                <h4>Téléphone</h4>
+                                <p>+229 01-65-82-67-05</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="icon-box">
+                                <i class="bi bi-envelope"></i>
+                            </div>
+                            <div class="content">
+                                <h4>Email</h4>
+                                <p>djohichristmiel&#64;gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="contact-form">
+                        <h3>Envoyez un message</h3>
+                        <p>Expliquez votre besoin backend ou API, et je vous répondrai rapidement.</p>
+
+                        <form class="php-email-form" #contactForm="ngForm" (ngSubmit)="sendMessage(contactForm)">
+                            <div class="row gy-4">
+
+                                <div class="col-md-6">
+                                    <input [(ngModel)]="item.nom" type="text" name="nom" class="form-control"
+                                        placeholder="Votre nom" required #nom="ngModel">
+                                    <div *ngIf="nom.invalid && nom.touched" class="error-message">Veuillez
+                                        entrer votre nom.</div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <input [(ngModel)]="item.email" type="email" class="form-control" name="email"
+                                        placeholder="Votre email" required #email="ngModel">
+                                    <div *ngIf="email.invalid && email.touched" class="error-message">
+                                        Veuillez entrer un email valide.</div>
+                                </div>
+
+                                <div class="col-12">
+                                    <input [(ngModel)]="item.subject" type="text" class="form-control" name="subject"
+                                        placeholder="Sujet" required #subject="ngModel">
+                                    <div *ngIf="subject.invalid && subject.touched" class="error-message">
+                                        Veuillez entrer le sujet.</div>
+                                </div>
+
+                                <div class="col-12">
+                                    <textarea [(ngModel)]="item.message" class="form-control" name="message" rows="6"
+                                        placeholder="Votre message" required #message="ngModel"></textarea>
+                                    <div *ngIf="message.invalid && message.touched" class="error-message">
+                                        Veuillez entrer votre message.</div>
+                                </div>
+
+                                <div class="col-12 text-center">
+                                    <div *ngIf="isLoading" class="loading">Chargement...</div>
+                                    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+                                    <div *ngIf="successMessage" class="sent-message">{{ successMessage }}
+                                    </div>
+
+                                    <button type="submit" class="btn" [disabled]="isLoading || contactForm.invalid">
+
+                                        <span *ngIf="!isLoading">Envoyer le message</span>
+
+                                        <span *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status"
+                                            aria-hidden="true"></span>
+                                        <span *ngIf="isLoading"> Envoi...</span>
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section><!-- /Contact Section -->
+
+</section><br>
 
 <footer id="footer" class="footer position-relative">
 
