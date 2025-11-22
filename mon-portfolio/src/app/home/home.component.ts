@@ -104,12 +104,12 @@ export class HomeComponent {
 
   downloadCV() {
     this.isLoading = true;
-    const fileUrl = '../../assets/pdf/christmiel_Djohi.pdf';
+    const fileUrl = '../../assets/pdf/cv_iréné_lokossou.pdf';
 
     fetch(fileUrl)
       .then(res => res.blob())
       .then(blob => {
-        saveAs(blob, 'christmiel_Djohi.pdf');
+        saveAs(blob, 'cv_iréné_lokossou.pdf');
       })
       .catch(err => console.error('Erreur téléchargement CV:', err))
       .finally(() => {
