@@ -6,8 +6,9 @@
   font-style: normal;
 }
 
-body {
+body,a {
   font-family: 'Montserrat-Medium';
+
 }
 
 #font {
@@ -15,6 +16,10 @@ body {
 
 }
 
+p{
+font-size: 1.1rem;
+text-align: justify;
+}
 /* Sidebar fixe sur desktop */
 .sidebar {
   position: fixed;
