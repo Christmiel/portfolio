@@ -746,7 +746,7 @@
                             <div class="row gy-4">
 
                                 <div class="col-md-6">
-                                    <input [(ngModel)]="item.nom" type="text" name="nom" class="form-control"
+                                    <input [(ngModel)]="item.name" type="text" name="nom" class="form-control"
                                         placeholder="Votre nom" required #nom="ngModel">
                                     <div *ngIf="nom.invalid && nom.touched" class="error-message">Veuillez entrer votre
                                         nom.</div>
@@ -760,7 +760,7 @@
                                 </div>
 
                                 <div class="col-12">
-                                    <input [(ngModel)]="item.subject" type="text" class="form-control" name="subject"
+                                    <input [(ngModel)]="item.sujet" type="text" class="form-control" name="subject"
                                         placeholder="Sujet" required #subject="ngModel">
                                     <div *ngIf="subject.invalid && subject.touched" class="error-message">
                                         Veuillez entrer le sujet.</div>

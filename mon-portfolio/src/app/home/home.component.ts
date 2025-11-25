@@ -8,9 +8,9 @@ import { saveAs } from 'file-saver';
 import Typed from 'typed.js';
 
 interface Contact {
-  nom: string;
+  name: string;
   email: string;
-  subject: string;
+  sujet: string;
   message: string;
 }
 
@@ -31,9 +31,9 @@ interface Contact {
 export class HomeComponent {
 
   item: Contact = {
-    nom: '',
+    name: '',
     email: '',
-    subject: '',
+    sujet: '',
     message: ''
   };
 
@@ -133,7 +133,7 @@ export class HomeComponent {
       next: (response) => {
         this.isLoading = false; // <<< IMPORTANT : mettre false
         this.successMessage = 'Votre message a été envoyé. Merci !';
-        this.item = { nom: '', email: '', subject: '', message: '' };
+        this.item = { name: '', email: '', sujet: '', message: '' };
         form.resetForm();
       },
       error: (err) => {
