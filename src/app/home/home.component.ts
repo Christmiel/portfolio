@@ -6,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { saveAs } from 'file-saver';
 import Typed from 'typed.js';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 interface Contact {
   nom: string;
@@ -22,6 +23,7 @@ interface Contact {
     FormsModule,
     HttpClientModule,
     CommonModule,
+    CarouselModule
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
@@ -52,7 +54,21 @@ export class HomeComponent {
     { icon: 'bi bi-graph-up', label: 'Analytics' },
     { icon: 'bi bi-share', label: 'Agile/Scrum' },
   ];
-
+  carouselOptions = {
+    loop: true,
+    margin: 20,
+    autoplay: true,
+    autoplayTimeout: 2500,
+    autoplayHoverPause: true,
+    dots: true,
+    nav: true,
+    navText: ['‹', '›'],
+    responsive: {
+      0: { items: 1 },
+      600: { items: 2 },
+      1000: { items: 3 }
+    }
+  };
   projects = [
     {
       title: 'Mairie de Toffo',
@@ -77,12 +93,26 @@ export class HomeComponent {
       category: ['web', 'official'],
       img: 'assets/img/portfolio/sidoffe.png',
       link: 'https://sidoffe-ng.social.gouv.bj/sidoffepublic/public',
+    },
+
+     {
+      title: 'Yemi',
+      category: ['web', ],
+      img: 'assets/img/portfolio/yemi.jpeg',
+      link: 'https://yemi.iwajutech.com/',
+    },
+
+      {
+      title: 'Marketo',
+      category: ['web', ],
+      img: 'assets/img/portfolio/marketo.png',
+      link: 'https://adminmarketo.iwajutech.com/#/auth/login',
     }
   ];
   constructor(private http: HttpClient) { }
 
 
-    ngAfterViewInit(): void {
+  ngAfterViewInit(): void {
     const typed = new Typed('.typed', {
       strings: ['Designer', 'Developer', 'Freelancer', 'Artist'], // ← texte
       typeSpeed: 80,
@@ -104,7 +134,7 @@ export class HomeComponent {
 
   downloadCV() {
     this.isLoading = true;
-    const fileUrl = '../../assets/pdf/christmiel_Djohi.pdf';
+    const fileUrl = '../../assets/pdf/cv_christmie_dhjohi.pdf';
 
     fetch(fileUrl)
       .then(res => res.blob())
@@ -144,11 +174,11 @@ export class HomeComponent {
     });
   }
 
-isMenuOpen = false;
+  isMenuOpen = false;
 
-toggleMenu() {
-  this.isMenuOpen = !this.isMenuOpen;
-}
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 
 
 }
