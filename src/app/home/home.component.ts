@@ -114,7 +114,7 @@ export class HomeComponent {
 
   ngAfterViewInit(): void {
     const typed = new Typed('.typed', {
-      strings: ['Designer', 'Developer', 'Freelancer', 'Artist'], // ← texte
+      strings: ['Freelancer', 'Analyste Cybersécurité'], // ← texte
       typeSpeed: 80,
       backSpeed: 40,
       backDelay: 1500,
